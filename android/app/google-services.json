@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "642421300294",
+    "project_id": "laza-b6140",
+    "storage_bucket": "laza-b6140.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642421300294:android:528007266027823828fe47",
+        "android_client_info": {
+          "package_name": "com.example.laza"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "642421300294-07ncjeto1rvng644te8mtgk1umutoc05.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxDv4nrr_jO7vEhzf2t0nGIbWAKm3Blyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "642421300294-07ncjeto1rvng644te8mtgk1umutoc05.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "642421300294-fdithn99h4jfhiq0b5d9g8thfqmu6k19.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.laza"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
