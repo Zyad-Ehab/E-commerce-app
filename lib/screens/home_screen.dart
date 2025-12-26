@@ -201,6 +201,7 @@ class _HomeScreenState extends State<HomeScreen> {
   // --- Product Card Helper ---
   Widget _buildProductCard(Product product) {
     return GestureDetector(
+      key: const Key('product_card_0'),
       onTap: () {
         // Navigate to Product Detail Screen
         Navigator.push(

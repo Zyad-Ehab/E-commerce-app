@@ -8,6 +8,7 @@ class CartService {
 
   String? get _userId => _auth.currentUser?.uid;
 
+  // Add to Cart
   Future<void> addToCart(Product product) async {
     if (_userId == null) return;
     try {
@@ -31,18 +32,20 @@ class CartService {
     }
   }
 
+  // Get Cart Stream
   Stream<List<Map<String, dynamic>>> getCartItems() {
     if (_userId == null) return Stream.value([]);
-    return _firestore.collection('users').doc(_userId).collection('cart').snapshots()
+    return _firestore.collection('users').doc(_userId).collection('cart').orderBy('addedAt', descending: true).snapshots()
         .map((snapshot) => snapshot.docs.map((doc) => doc.data()).toList());
   }
 
+  // Remove Item
   Future<void> removeFromCart(int productId) async {
     if (_userId == null) return;
     await _firestore.collection('users').doc(_userId).collection('cart').doc(productId.toString()).delete();
   }
   
-  // Mock Checkout: Clear all items
+  // Checkout (Clear Cart)
   Future<void> clearCart() async {
     if (_userId == null) return;
     final batch = _firestore.batch();

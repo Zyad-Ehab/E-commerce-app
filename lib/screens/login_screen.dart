@@ -67,9 +67,9 @@ class _LoginScreenState extends State<LoginScreen> {
             const Text("Welcome", style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
             const Text("Please enter your data to continue", style: TextStyle(color: Colors.grey)),
             const Spacer(),
-            TextField(controller: _emailController, decoration: const InputDecoration(labelText: "Email Address")),
+            TextField(key: const Key('login_email_field'),controller: _emailController, decoration: const InputDecoration(labelText: "Email Address")),
             const SizedBox(height: 20),
-            TextField(controller: _passwordController, obscureText: true, decoration: const InputDecoration(labelText: "Password")),
+            TextField(key: const Key('login_pass_field'),controller: _passwordController, obscureText: true, decoration: const InputDecoration(labelText: "Password")),
             
             // Forgot Password
             Align(
@@ -86,6 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
               width: double.infinity,
               height: 50,
               child: ElevatedButton(
+                key: const Key('login_btn'),
                 style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF9775FA)),
                 onPressed: _isLoading ? null : _login,
                 child: _isLoading ? const CircularProgressIndicator(color: Colors.white) : const Text("Login", style: TextStyle(color: Colors.white)),

@@ -52,6 +52,7 @@ class WelcomeScreen extends StatelessWidget {
                   backgroundColor: const Color(0xFF9775FA),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                 ),
+                key: const Key('create_account_btn'),
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (_) => const SignupScreen()));
                 },

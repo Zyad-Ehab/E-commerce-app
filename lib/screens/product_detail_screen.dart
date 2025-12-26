@@ -118,6 +118,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               backgroundColor: const Color(0xFF9775FA),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             ),
+            key: const Key('add_to_cart_btn'),
             onPressed: _addToCart,
             child: const Text("Add to Cart", style: TextStyle(color: Colors.white, fontSize: 17)),
           ),

@@ -61,11 +61,13 @@ class _SignupScreenState extends State<SignupScreen> {
             const Text("Sign Up", style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
             const Spacer(),
             TextField(
+              key: const Key('signup_email_field'),
               controller: _emailController,
               decoration: const InputDecoration(labelText: "Email Address"),
             ),
             const SizedBox(height: 20),
             TextField(
+              key: const Key('signup_pass_field'),
               controller: _passwordController,
               obscureText: true,
               decoration: const InputDecoration(labelText: "Password"),
@@ -75,6 +77,7 @@ class _SignupScreenState extends State<SignupScreen> {
               width: double.infinity,
               height: 50,
               child: ElevatedButton(
+                key: const Key('signup_btn'),
                 style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF9775FA)),
                 onPressed: _isLoading ? null : _signup,
                 child: _isLoading 
