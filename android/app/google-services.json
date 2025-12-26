@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "642421300294-n75bamf2rhebvhsvvr38attgltloit2g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.laza",
+            "certificate_hash": "f8daf2de858d55fff95b20d05b6aa630336673f9"
+          }
+        },
+        {
           "client_id": "642421300294-07ncjeto1rvng644te8mtgk1umutoc05.apps.googleusercontent.com",
           "client_type": 3
         }

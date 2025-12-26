@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -59,4 +56,15 @@ class DefaultFirebaseOptions {
     projectId: 'laza-b6140',
     storageBucket: 'laza-b6140.firebasestorage.app',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyDvbWRFlz60Li3DsRT2yO9D1ubqtIlY-kI',
+    appId: '1:642421300294:web:9387f51fad25147328fe47',
+    messagingSenderId: '642421300294',
+    projectId: 'laza-b6140',
+    authDomain: 'laza-b6140.firebaseapp.com',
+    storageBucket: 'laza-b6140.firebasestorage.app',
+    measurementId: 'G-BBBRXJGF43',
+  );
+
 }
