@@ -19,15 +19,8 @@ class WelcomeScreen extends StatelessWidget {
             ),
             const Spacer(),
             
-            // Decorative Social Buttons (Non-functional per your request)
-            _socialButton("Facebook", const Color(0xFF4267B2), Icons.facebook),
-            const SizedBox(height: 15),
-            _socialButton("Twitter", const Color(0xFF1DA1F2), Icons.alternate_email),
-            const SizedBox(height: 15),
-            _socialButton("Google", const Color(0xFFEA4335), Icons.g_mobiledata),
-            
-            const Spacer(),
-            
+
+
             // Already have account? -> Login
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
