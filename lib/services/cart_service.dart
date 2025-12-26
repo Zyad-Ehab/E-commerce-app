@@ -33,11 +33,33 @@ class CartService {
     }
   }
 
-  // Get Cart Stream
+  // Get Items
   Stream<List<Map<String, dynamic>>> getCartItems() {
     if (_userId == null) return Stream.value([]);
-    return _firestore.collection('users').doc(_userId).collection('cart').orderBy('addedAt', descending: true).snapshots()
+    return _firestore
+        .collection('users')
+        .doc(_userId)
+        .collection('cart')
+        .orderBy('addedAt', descending: true) // Optional: Sort by newest
+        .snapshots()
         .map((snapshot) => snapshot.docs.map((doc) => doc.data()).toList());
+  }
+
+  //  Update Quantity
+  Future<void> updateQuantity(int productId, int quantity) async {
+    if (_userId == null) return;
+    if (quantity < 1) return; // Prevent invalid quantity
+
+    try {
+      await _firestore
+          .collection('users')
+          .doc(_userId)
+          .collection('cart')
+          .doc(productId.toString()) // Convert int ID to String for lookup
+          .update({'quantity': quantity});
+    } catch (e) {
+      print("Error updating quantity: $e");
+    }
   }
 
   // Remove Item
